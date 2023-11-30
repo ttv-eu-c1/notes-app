@@ -27,7 +27,7 @@ export default async function Login() {
         <TextField label="Username" />
         <TextField label="Password" />
         <Button variant="contained" style={{ marginTop: 40 }}>
-          Submit
+          Login
         </Button>
       </Stack>
     </Box>
