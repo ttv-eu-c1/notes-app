@@ -1,8 +1,5 @@
-import Link from "next/link";
-
 import { authOptions } from "@/app/api/auth/[...nextauth]/constants";
-import { EmailLoginForm } from "@/modules/auth/components/email-login-form/email-login-form";
-import { Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, TextField } from "@mui/material";
 import { type Metadata } from "next";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
@@ -19,19 +16,20 @@ export default async function Login() {
   }
 
   return (
-    <Stack spacing={2}>
-      <Typography variant="h2">Sign in to your account</Typography>
-      <Typography>
-        Don’t have an account?{" "}
-        <Link
-          href="/auth/register"
-          className="font-medium text-green-600 hover:underline"
-        >
-          Sign up
-        </Link>{" "}
-        for a free trial.
-      </Typography>
-      <EmailLoginForm />
-    </Stack>
+    <Box
+      width="100%"
+      minHeight="100vh"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Stack direction="column" spacing={2} width={220}>
+        <TextField label="Username" />
+        <TextField label="Password" />
+        <Button variant="contained" style={{ marginTop: 40 }}>
+          Submit
+        </Button>
+      </Stack>
+    </Box>
   );
 }
