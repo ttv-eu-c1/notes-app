@@ -1,5 +1,5 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/constants";
-import { Box, Button, Stack, TextField } from "@mui/material";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { type Metadata } from "next";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
@@ -24,6 +24,7 @@ export default async function Login() {
       justifyContent="center"
     >
       <Stack direction="column" spacing={2} width={220}>
+        <Typography>Login Page</Typography>
         <TextField label="Username" />
         <TextField label="Password" />
         <Button variant="contained" style={{ marginTop: 40 }}>
