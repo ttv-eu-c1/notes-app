@@ -2,16 +2,16 @@
 
 import { Button, Container, Stack, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
-import { Note } from "../api/notes/route";
+import { NoteInput } from "../api/notes/route";
+import { Note } from "@prisma/client";
 
-const emptyNote: Note = {
-  id: "",
+const emptyNote: NoteInput = {
   title: "",
   content: "",
 };
 
 export default function DashboardPage() {
-  const [note, setNote] = useState<Note>(emptyNote);
+  const [note, setNote] = useState<NoteInput>(emptyNote);
   const [notes, setNotes] = useState<Note[]>([]);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function DashboardPage() {
             }
           />
           <Button type="submit" variant="contained">
-            Submit
+            Submit!
           </Button>
         </Stack>
       </form>
