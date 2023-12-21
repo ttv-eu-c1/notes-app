@@ -16,7 +16,13 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
   return NextResponse.json(created);
 };
 
+export interface GetAllNotesResponse {
+  notes: Note[];
+}
+
 export const GET = async (req: NextRequest, res: NextResponse) => {
   const notes = await prisma.note.findMany();
-  return NextResponse.json(notes);
+  return NextResponse.json<GetAllNotesResponse>({
+    notes,
+  });
 };
