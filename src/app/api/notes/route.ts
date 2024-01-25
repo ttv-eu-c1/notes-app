@@ -24,7 +24,7 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
       },
       {
         status: 403,
-      }
+      },
     );
   }
 
@@ -81,7 +81,7 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
       },
       {
         status: 403,
-      }
+      },
     );
   }
 
