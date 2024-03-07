@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
     <div>
-      <Container>
+      <Container sx={{ py: 2 }}>
         <nav>
           <Link href="/auth/logout">
             <Button variant="contained">Logout</Button>
